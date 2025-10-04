@@ -15,8 +15,8 @@ const testimonials = [
   },
   {
     quote: "The mock tests felt exactly like the real exam. The detailed analytics showed me my weak points and the study plan was perfectly tailored. Highly recommend!",
-    author: "John Davidson",
-    location: "London, UK",
+    author: "Rahul Deshmukh",
+    location: "Pune, India",
     role: "Medical Student",
     stars: 5,
     beforeScore: 7.0,
@@ -26,8 +26,8 @@ const testimonials = [
   },
   {
     quote: "Speaking practice with native speakers built my confidence tremendously. The real-time feedback helped me improve my pronunciation and fluency. Worth every penny!",
-    author: "Aisha Mohammed",
-    location: "Dubai, UAE",
+    author: "Ananya Iyer",
+    location: "Bangalore, India",
     role: "Business Analyst",
     stars: 5,
     beforeScore: 6.5,

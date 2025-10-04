@@ -19,13 +19,14 @@ const About = () => {
             
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               Founded by IELTS experts with over 15 years of experience, IELTS Mastery Hub 
-              has revolutionized IELTS preparation by combining traditional teaching methods 
+              has revolutionized IELTS preparation in India by combining traditional teaching methods 
               with cutting-edge AI technology.
             </p>
             
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Our platform has helped over 50,000 students worldwide achieve their target 
-              band scores, with an average improvement of 1.5 bands within 3 months.
+              Our platform has helped over 50,000 students across India achieve their target 
+              band scores, with an average improvement of 1.5 bands within 3 months. We serve students 
+              from Mumbai, Delhi, Bangalore, Pune, Hyderabad, and 100+ cities across India.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
@@ -42,8 +43,8 @@ const About = () => {
                 <div className="text-gray-600">Success Rate</div>
               </div>
               <div className="text-center p-4 bg-yellow-50 rounded-lg">
-                <div className="text-3xl font-bold text-yellow-600 mb-2">40+</div>
-                <div className="text-gray-600">Countries</div>
+                <div className="text-3xl font-bold text-yellow-600 mb-2">100+</div>
+                <div className="text-gray-600">Cities in India</div>
               </div>
             </div>
 

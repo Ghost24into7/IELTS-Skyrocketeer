@@ -141,8 +141,8 @@ const Footer = () => {
                   </svg>
                 </div>
                 <div className="ml-3">
-                  <p className="text-gray-300 text-sm">info@ieltsmasteryhub.com</p>
-                  <p className="text-gray-300 text-sm">support@ieltsmasteryhub.com</p>
+                  <p className="text-gray-300 text-sm">info@ieltsmasteryhub.in</p>
+                  <p className="text-gray-300 text-sm">support@ieltsmasteryhub.in</p>
                 </div>
               </div>
               <div className="flex items-start group hover:bg-gray-800/30 p-2 rounded-lg transition-colors duration-300">
@@ -152,8 +152,8 @@ const Footer = () => {
                   </svg>
                 </div>
                 <div className="ml-3">
-                  <p className="text-gray-300 text-sm">+1 (555) 123-4567</p>
-                  <p className="text-gray-300 text-sm">+1 (555) 987-6543</p>
+                  <p className="text-gray-300 text-sm">+91 98765 43210</p>
+                  <p className="text-gray-300 text-sm">+91 88888 99999</p>
                 </div>
               </div>
               <div className="flex items-start group hover:bg-gray-800/30 p-2 rounded-lg transition-colors duration-300">
@@ -162,7 +162,7 @@ const Footer = () => {
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                   </svg>
                 </div>
-                <p className="text-gray-300 text-sm ml-3">123 Education Street<br/>Learning City, LC 12345</p>
+                <p className="text-gray-300 text-sm ml-3">304, Pearl Plaza, Andheri East<br/>Mumbai, Maharashtra 400069</p>
               </div>
             </div>
           </motion.div>
