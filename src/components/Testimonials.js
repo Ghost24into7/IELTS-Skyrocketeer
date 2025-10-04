@@ -6,28 +6,34 @@ const testimonials = [
     quote: "The AI feedback completely transformed my writing skills. I went from Band 6 to 8.5 in just 3 months! The personalized insights helped me understand exactly where I was making mistakes.",
     author: "Priya Sharma",
     location: "Mumbai, India",
+    role: "Software Engineer",
     stars: 5,
     beforeScore: 6.0,
     afterScore: 8.5,
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b776?ixlib=rb-4.0.3&w=150&h=150&fit=crop&crop=face"
+    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b776?ixlib=rb-4.0.3&w=150&h=150&fit=crop&crop=face",
+    verified: true
   },
   {
-    quote: "The mock tests felt exactly like the real exam. The detailed analytics showed me my weak points and the study plan was perfectly tailored. Highly recommend this platform!",
+    quote: "The mock tests felt exactly like the real exam. The detailed analytics showed me my weak points and the study plan was perfectly tailored. Highly recommend!",
     author: "John Davidson",
     location: "London, UK",
+    role: "Medical Student",
     stars: 5,
     beforeScore: 7.0,
     afterScore: 8.0,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=150&h=150&fit=crop&crop=face"
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=150&h=150&fit=crop&crop=face",
+    verified: true
   },
   {
     quote: "Speaking practice with native speakers built my confidence tremendously. The real-time feedback helped me improve my pronunciation and fluency. Worth every penny!",
     author: "Aisha Mohammed",
     location: "Dubai, UAE",
+    role: "Business Analyst",
     stars: 5,
     beforeScore: 6.5,
     afterScore: 8.0,
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&w=150&h=150&fit=crop&crop=face"
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&w=150&h=150&fit=crop&crop=face",
+    verified: true
   }
 ];
 

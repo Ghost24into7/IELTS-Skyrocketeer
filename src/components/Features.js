@@ -55,46 +55,53 @@ const Features = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.2, duration: 0.8 }}
+              transition={{ delay: idx * 0.15, duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -10, scale: 1.02 }}
               className="group"
             >
-              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full">
-                <div className="text-center mb-6">
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {feature.description}
-                  </p>
-                </div>
-
-                <div className="space-y-3">
-                  {feature.highlights.map((highlight, highlightIdx) => (
-                    <div key={highlightIdx} className="flex items-center">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                      <span className="text-gray-700 font-medium">{highlight}</span>
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-blue-200 h-full relative overflow-hidden">
+                {/* Decorative gradient background */}
+                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${feature.color} opacity-10 rounded-bl-full transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500`}></div>
+                
+                <div className="relative z-10">
+                  <div className="text-center mb-4">
+                    <div className={`inline-flex items-center justify-center w-16 h-16 ${feature.bgColor} rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <span className="text-4xl">{feature.icon}</span>
                     </div>
-                  ))}
-                </div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {feature.description}
+                    </p>
+                  </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-                >
-                  Learn More
-                </motion.button>
+                  <div className="space-y-2 mb-4">
+                    {feature.highlights.map((highlight, highlightIdx) => (
+                      <div key={highlightIdx} className="flex items-center">
+                        <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                        <span className="text-gray-700 text-sm font-medium">{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`w-full bg-gradient-to-r ${feature.color} text-white py-2.5 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300`}
+                  >
+                    Learn More
+                  </motion.button>
+                </div>
               </div>
             </motion.div>
           ))}
