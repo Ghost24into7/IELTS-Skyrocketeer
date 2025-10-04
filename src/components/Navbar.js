@@ -1,16 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+          : 'bg-white shadow-md'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-blue-600">IELTS Mastery Hub</h1>
-          </div>
+          <motion.div 
+            className="flex items-center space-x-2"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">I</span>
+            </div>
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">IELTS Mastery Hub</h1>
+          </motion.div>
           
           {/* Desktop Menu */}
           <div className="hidden md:block">
@@ -39,9 +63,13 @@ const Navbar = () => {
               >
                 Contact
               </a>
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+              <motion.button 
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(59, 130, 246, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2.5 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg"
+              >
                 Enroll Now
-              </button>
+              </motion.button>
             </div>
           </div>
           
@@ -66,8 +94,13 @@ const Navbar = () => {
       </div>
       
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-t border-gray-200 overflow-hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <a
               href="#home"
@@ -101,9 +134,10 @@ const Navbar = () => {
               Enroll Now
             </button>
           </div>
-        </div>
-      )}
-    </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 

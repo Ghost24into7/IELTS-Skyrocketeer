@@ -6,19 +6,33 @@ const features = [
     icon: '🎤',
     title: 'Speaking Practice',
     description: 'Live sessions with native speakers for fluent confidence. Practice real IELTS speaking questions with expert feedback.',
-    highlights: ['Native Speaker Sessions', 'Real-time Feedback', 'Band Score Prediction']
+    highlights: ['Native Speaker Sessions', 'Real-time Feedback', 'Band Score Prediction'],
+    color: 'from-blue-500 to-cyan-500',
+    bgColor: 'bg-blue-50'
   },
   {
     icon: '📝',
     title: 'Mock Tests',
     description: 'Real exam simulations with detailed analytics. Experience the actual IELTS test environment with comprehensive scoring.',
-    highlights: ['Authentic Test Format', 'Detailed Analytics', 'Progress Tracking']
+    highlights: ['Authentic Test Format', 'Detailed Analytics', 'Progress Tracking'],
+    color: 'from-purple-500 to-pink-500',
+    bgColor: 'bg-purple-50'
   },
   {
     icon: '🤖',
     title: 'AI Band Score',
     description: 'Instant feedback on writing & speaking via advanced AI. Get immediate insights to improve your performance.',
-    highlights: ['Instant Analysis', 'AI-Powered Scoring', 'Personalized Tips']
+    highlights: ['Instant Analysis', 'AI-Powered Scoring', 'Personalized Tips'],
+    color: 'from-green-500 to-emerald-500',
+    bgColor: 'bg-green-50'
+  },
+  {
+    icon: '📚',
+    title: 'Study Materials',
+    description: 'Comprehensive study resources and practice materials. Access our extensive library of IELTS preparation content.',
+    highlights: ['E-Books & Guides', 'Video Tutorials', 'Practice Questions'],
+    color: 'from-orange-500 to-red-500',
+    bgColor: 'bg-orange-50'
   },
 ];
 
