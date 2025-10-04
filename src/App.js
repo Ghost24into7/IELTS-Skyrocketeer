@@ -1,12 +1,19 @@
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Testimonials from './components/Testimonials';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="text-center py-20">
-        <h1 className="text-4xl font-bold text-blue-600 mb-4">IELTS Mastery Hub</h1>
-        <p className="text-lg text-gray-700">Modern IELTS preparation platform coming soon...</p>
-      </div>
+    <div className="App">
+      <Navbar />
+      <Hero />
+      <Features />
+      <Testimonials />
+      <Footer />
     </div>
   );
 }
