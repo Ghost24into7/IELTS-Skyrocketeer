@@ -1,4 +1,4 @@
-# 🎓 IELTS Mastery Hub - Homepage
+# 🎓 IELTS Mastery Hub - Live link for demo (https://ieltsmasteryhub.vercel.app/)
 
 A modern, professional single-page application (SPA) for "IELTS Mastery Hub," a fictional IELTS preparation institute targeting the Indian market. Built with React JS, Tailwind CSS, and Framer Motion to deliver an engaging, responsive user experience that showcases the institute's offerings and drives user action.
 
