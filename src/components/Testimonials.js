@@ -84,52 +84,78 @@ const Testimonials = () => {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 h-full relative">
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-blue-200 h-full relative overflow-hidden">
+                {/* Decorative element */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-bl-full transform translate-x-6 -translate-y-6"></div>
+                
                 {/* Quote icon */}
-                <div className="absolute top-4 right-4 text-blue-200 text-4xl">
+                <div className="absolute top-4 right-4 text-blue-200 text-5xl opacity-50 z-0">
                   "
                 </div>
 
-                {/* Star rating */}
-                <StarRating rating={testimonial.stars} />
+                {/* Verified badge */}
+                {testimonial.verified && (
+                  <div className="absolute top-4 left-4 bg-green-500 text-white px-2 py-1 rounded-full flex items-center text-xs font-semibold">
+                    <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                    </svg>
+                    Verified
+                  </div>
+                )}
 
-                {/* Quote */}
-                <p className="text-gray-700 leading-relaxed mb-6 italic">
-                  "{testimonial.quote}"
-                </p>
+                <div className="relative z-10 pt-8">
+                  {/* Star rating */}
+                  <StarRating rating={testimonial.stars} />
 
-                {/* Score improvement */}
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg mb-6">
-                  <div className="text-center">
-                    <div className="text-sm text-gray-600 mb-2">Score Improvement</div>
-                    <div className="flex items-center justify-center space-x-4">
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-red-500">{testimonial.beforeScore}</div>
-                        <div className="text-xs text-gray-500">Before</div>
+                  {/* Quote */}
+                  <p className="text-gray-700 leading-relaxed mb-4 italic text-sm">
+                    "{testimonial.quote}"
+                  </p>
+
+                  {/* Score improvement */}
+                  <div className="bg-gradient-to-r from-green-50 via-blue-50 to-purple-50 p-3 rounded-xl mb-4 border border-green-200">
+                    <div className="text-center">
+                      <div className="text-xs text-gray-600 mb-2 font-semibold">Score Improvement</div>
+                      <div className="flex items-center justify-center space-x-3">
+                        <div className="text-center">
+                          <div className="text-xl font-bold text-red-500">{testimonial.beforeScore}</div>
+                          <div className="text-xs text-gray-500">Before</div>
+                        </div>
+                        <motion.div 
+                          className="text-green-500"
+                          animate={{ x: [0, 5, 0] }}
+                          transition={{ repeat: Infinity, duration: 1.5 }}
+                        >
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        </motion.div>
+                        <div className="text-center">
+                          <div className="text-xl font-bold text-green-500">{testimonial.afterScore}</div>
+                          <div className="text-xs text-gray-500">After</div>
+                        </div>
                       </div>
-                      <div className="text-blue-500">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-green-500">{testimonial.afterScore}</div>
-                        <div className="text-xs text-gray-500">After</div>
+                      <div className="mt-2 text-xs font-semibold text-green-600">
+                        +{(testimonial.afterScore - testimonial.beforeScore).toFixed(1)} Band Improvement
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Author info */}
-                <div className="flex items-center">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
-                  <div>
-                    <div className="font-semibold text-gray-800">{testimonial.author}</div>
-                    <div className="text-sm text-gray-600">{testimonial.location}</div>
+                  {/* Author info */}
+                  <div className="flex items-center pt-3 border-t border-gray-200">
+                    <div className="relative">
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.author}
+                        className="w-12 h-12 rounded-full object-cover mr-3 border-2 border-blue-200"
+                      />
+                      <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"></div>
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-800 text-sm">{testimonial.author}</div>
+                      <div className="text-xs text-gray-500">{testimonial.role}</div>
+                      <div className="text-xs text-gray-500">{testimonial.location}</div>
+                    </div>
                   </div>
                 </div>
               </div>
